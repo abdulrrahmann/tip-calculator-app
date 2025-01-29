@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/logo.svg" id="logo" alt="" />
+      <form action="" novalidate>
+        <label for="bill" class="info"
+          >Bill <span class="hidden msg">Can't be zero</span></label
+        >
+        <div class="input-container">
+          <img src="images/icon-dollar.svg" alt="" />
+          <input type="number" name="bill" id="bill" placeholder="0" />
+        </div>
+
+        <p class="info">Select Tip %</p>
+        <ul class="select-tip">
+          <li data-amount="5">5%</li>
+          <li data-amount="10">10%</li>
+          <li data-amount="15">15%</li>
+          <li data-amount="25">25%</li>
+          <li data-amount="50">50%</li>
+          <li data-amount="" id="custom-btn">
+            <span>Custom</span>
+            <input type="number" name="tip" id="tip" class="hidden" />
+          </li>
+        </ul>
+
+        <label for="number" class="info"
+          >Number of People <span class="hidden msg">Can't be zero</span></label
+        >
+        <div class="input-container">
+          <img src="images/icon-person.svg" alt="" />
+          <input type="number" name="number" id="number" placeholder="0" />
+        </div>
+      </form>
+      <div class="result">
+        <div class="tip-amount">
+          <div class="left">
+            <p>Tip Amount</p>
+            <span>/ person</span>
+          </div>
+          <div class="right">$<span>0.00</span></div>
+        </div>
+        <div class="total">
+          <div class="left">
+            <p>Total</p>
+            <span>/ person</span>
+          </div>
+          <div class="right">$<span>0.00</span></div>
+        </div>
+        <button class="btn">Reset</button>
+      </div>
+    </div>
+  </body>
+</html>
