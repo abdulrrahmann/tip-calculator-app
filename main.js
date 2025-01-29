@@ -27,8 +27,10 @@ bill.addEventListener("input", (e) => {
 
     // Calc tipAmount and Total
     if (numberOfPeopleNum && tipRatio && billNum) {
-      tipAmount = (billNum * tipRatio).toFixed(2);
-      tipTotal = (numberOfPeopleNum * tipAmount).toFixed(2);
+      tipAmount = ((billNum * tipRatio) / numberOfPeopleNum).toFixed(2);
+      tipTotal = ((billNum * tipRatio + billNum) / numberOfPeopleNum).toFixed(
+        2
+      );
 
       // Update tip Amount and total
       document.querySelector(".tip-amount .right span").innerHTML = tipAmount;
@@ -61,8 +63,10 @@ numberOfPeople.addEventListener("input", (e) => {
 
     // Calc tipAmount and Total
     if (billNum && tipRatio && numberOfPeopleNum) {
-      tipAmount = (billNum * tipRatio).toFixed(2);
-      tipTotal = (numberOfPeopleNum * tipAmount).toFixed(2);
+      tipAmount = ((billNum * tipRatio) / numberOfPeopleNum).toFixed(2);
+      tipTotal = ((billNum * tipRatio + billNum) / numberOfPeopleNum).toFixed(
+        2
+      );
 
       // Update tip Amount and total
       document.querySelector(".tip-amount .right span").innerHTML = tipAmount;
@@ -104,8 +108,11 @@ tipButtons.forEach((button) => {
 
           // Calc tipAmount and Total
           if (billNum && numberOfPeopleNum && tipRatio) {
-            tipAmount = (billNum * tipRatio).toFixed(2);
-            tipTotal = (numberOfPeopleNum * tipAmount).toFixed(2);
+            tipAmount = ((billNum * tipRatio) / numberOfPeopleNum).toFixed(2);
+            tipTotal = (
+              (billNum * tipRatio + billNum) /
+              numberOfPeopleNum
+            ).toFixed(2);
 
             // Update tip Amount and total
             document.querySelector(".tip-amount .right span").innerHTML =
@@ -140,8 +147,10 @@ tipButtons.forEach((button) => {
 
       // Calc tipAmount and Total
       if (billNum && numberOfPeopleNum && tipRatio) {
-        tipAmount = (billNum * tipRatio).toFixed(2);
-        tipTotal = (numberOfPeopleNum * tipAmount).toFixed(2);
+        tipAmount = ((billNum * tipRatio) / numberOfPeopleNum).toFixed(2);
+        tipTotal = ((billNum * tipRatio + billNum) / numberOfPeopleNum).toFixed(
+          2
+        );
 
         // Update tip Amount and total
         document.querySelector(".tip-amount .right span").innerHTML = tipAmount;
@@ -178,13 +187,13 @@ resetBtn.addEventListener("click", (e) => {
   });
 
   // Remove active class from the button
-    e.target.classList.remove("active");
-    
-    // hide custom button
-    if (document.getElementById("custom-btn").classList.contains("custom")) {
-        document.querySelector("#custom-btn span").classList.remove("hidden");
-        tip.value = 0;
-        tip.classList.add("hidden");
-        document.getElementById("custom-btn").classList.remove("custom");
-    }
+  e.target.classList.remove("active");
+
+  // hide custom button
+  if (document.getElementById("custom-btn").classList.contains("custom")) {
+    document.querySelector("#custom-btn span").classList.remove("hidden");
+    tip.value = 0;
+    tip.classList.add("hidden");
+    document.getElementById("custom-btn").classList.remove("custom");
+  }
 });
